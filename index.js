@@ -15,6 +15,7 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
+  items.forEach((element) => console.log(element.name));
 }
 
 /**
@@ -23,6 +24,7 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
+  return items.map((element) => element.name.charAt(0).toUpperCase() + element.name.slice(1));
 }
 
 /**
@@ -32,6 +34,7 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  return items.find((element) => element.id === 1).name;
 }
 
 /**
@@ -41,6 +44,11 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  for (item of items) {
+    if (item.name === name) {
+      return item.price;
+    }
+  }
 }
 
 /**
@@ -50,6 +58,7 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  return items.filter((element) => element.category === category);
 }
 
 /**
@@ -58,6 +67,8 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  const sumOfItems = 0;
+  return items.reduce((accumulator, element) => accumulator + element.quantity, sumOfItems);
 }
 
 /**
@@ -66,6 +77,12 @@ function countItems(items) {
  */
 function calculateTotalPrice(items) {
   // TODO: use `reduce`
+  const sumOfItems = 0;
+
+  // I am not sure if it is asking all items bought one time or all items in stock.
+  // But I did both anyways.
+  return items.reduce((accumulator, element) => accumulator + element.price, sumOfItems);
+  //return items.reduce((accumulator, element) => accumulator + (element.price * element.quantity), sumOfItems);
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
